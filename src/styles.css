@@ -5,9 +5,10 @@
   --platinum: #ebebebff;
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
+  color: var(--platinum);
 }
 
 body {
@@ -18,15 +19,65 @@ body {
   gap: 20px;
 }
 
-.container{
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--midnight-violet);
+  fill: var(--platinum);
+  border: 0 solid;
+  box-shadow: 0px 10px 20px -10px var(--coffee-bean), inset 0px 10px 20px -10px var(--platinum);
+
+  transition: all 100ms linear;
+
+  &:hover {
+    filter: brightness(1.5);
+    box-shadow: 0px 20px 40px -20px var(--coffee-bean), inset 0px 20px 40px -20px var(--platinum);
+  }
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90vw;
-  height: 100px;
-  background-color: #951;
+  width: calc(100vw - 40px);
+  gap: 20px;
 }
 
-#menu-container{
+#habit-container {
+  margin-top: 20px;
+}
+
+#menu-container {
   justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  border-radius: 20px;
+  flex-direction: row;
+
+  #null-button {
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    font-size: 50px;
+  }
+
+  #add-habit {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    font-size: 80px;
+  }
+
+  #clear-all {
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    font-size: 50px;
+  }
+
+  .debug-button {
+    background-color: var(--scarlet-fire);
+  }
 }
