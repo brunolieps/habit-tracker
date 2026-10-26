@@ -45,6 +45,17 @@ button {
   }
 }
 
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+  background-color: var(--platinum);
+  color: var(--coffee-bean);
+  border: 1px solid var(--coffee-bean);
+  border-radius: 10px;
+  width: 100%;
+  font-size: 20px;
+}
+
 #null-button {
   background-color: var(--coffee-bean) !important;
 }
@@ -58,6 +69,28 @@ button {
 
 #habit-container {
   margin-top: 20px;
+}
+
+#habitreg-container {
+  background-color: var(--platinum);
+  padding: 20px 0;
+  border-radius: 20px;
+  width: calc(100vw - 160px);
+
+  position: fixed;
+  bottom: 160px;
+
+  label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: calc(100% - 40px);
+
+    p {
+      color: var(--coffee-bean);
+      font-size: 20px;
+    }
+  }
 }
 
 #menu-container {

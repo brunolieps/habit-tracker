@@ -1,20 +1,25 @@
 var habits = [];
 var reminders = [];
-var itemId = Int32Array;
+var itemId = 0;
 
 window.addEventListener("load", function appLoaded() {
   console.log("App loaded");
 });
 
 function addHabit() {
-  var habit = { "habitId": "", "name": "", "days": [] };
-  habits.push(habit);
+  var habitName = document.querySelector("#habit-name").value;
 
-  console.log("habits array: " + JSON.stringify(habits));
+  if (habitName != "") {
+    var habit = { "itemId": itemId, "name": habitName, "days": [] };
+    itemId += 1;
+    habits.push(habit);
+
+    console.log("habits array: " + JSON.stringify(habits));
+  }
 }
 
 function addReminder() {
-  var reminder = { "reminderId": "", "habitId": "", "weekDays": [], "hour": "" };
+  var reminder = { "itemId": "", "relItemId": "", "weekDays": [], "hour": "" };
   reminders.push(reminder);
 
   console.log("reminders array: " + JSON.stringify(reminders));
