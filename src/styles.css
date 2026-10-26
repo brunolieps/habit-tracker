@@ -5,6 +5,14 @@
   --platinum: #ebebebff;
 }
 
+.g-10 {
+  gap: 10px;
+}
+
+.g-20 {
+  gap: 20px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -27,14 +35,18 @@ button {
   background-color: var(--midnight-violet);
   fill: var(--platinum);
   border: 0 solid;
-  box-shadow: 0px 10px 20px -10px var(--coffee-bean), inset 0px 10px 20px -10px var(--platinum);
+  box-shadow: 0px 10px 20px -10px #000, inset 0px 10px 20px -10px var(--platinum);
 
-  transition: all 100ms linear;
+  transition: all 100ms ease-out;
 
   &:hover {
     filter: brightness(1.5);
-    box-shadow: 0px 20px 40px -20px var(--coffee-bean), inset 0px 20px 40px -20px var(--platinum);
+    box-shadow: 0px 40px 40px -40px #000, inset 0px 20px 40px -20px var(--platinum);
   }
+}
+
+#null-button {
+  background-color: var(--coffee-bean) !important;
 }
 
 .container {
@@ -42,7 +54,6 @@ button {
   flex-direction: column;
   align-items: center;
   width: calc(100vw - 40px);
-  gap: 20px;
 }
 
 #habit-container {

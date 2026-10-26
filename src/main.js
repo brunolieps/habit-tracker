@@ -14,7 +14,7 @@ function addHabit() {
 }
 
 function addReminder() {
-  var reminder = { "reminderId": "", "name": "", "habitId": "", "weekDays": [], "hour": "" };
+  var reminder = { "reminderId": "", "habitId": "", "weekDays": [], "hour": "" };
   reminders.push(reminder);
 
   console.log("reminders array: " + JSON.stringify(reminders));
