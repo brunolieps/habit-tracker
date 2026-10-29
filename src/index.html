@@ -39,7 +39,34 @@
   </div>
 
   <div id="habitreg-container" class="container g-10">
-    <label for="habit-name" class="g-10"><p>Nome:</p><input type="text" id="habit-name"></label>
+    <h4>Novo Habito</h4>
+    <label class="g-10">
+      <p>Nome:</p><input type="text" id="habit-name">
+    </label>
+
+    <div id="remindereg-header">
+      <h4>Lembretes</h4>
+      <button id="add-reminder">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <path
+            d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div class="reminder-form g-10">
+      <fieldset class="g-10">
+        <label><input type="checkbox" name="weekdays" id="dom">D</label>
+        <label><input type="checkbox" name="weekdays" id="seg">S</label>
+        <label><input type="checkbox" name="weekdays" id="ter">T</label>
+        <label><input type="checkbox" name="weekdays" id="qua">Q</label>
+        <label><input type="checkbox" name="weekdays" id="qui">Q</label>
+        <label><input type="checkbox" name="weekdays" id="sex">S</label>
+        <label><input type="checkbox" name="weekdays" id="sab">S</label>
+      </fieldset>
+
+      <label class="g-10"><p>Hora:</p><input type="time"></label>
+    </div>
   </div>
 
   <script src="/main.js"></script>
