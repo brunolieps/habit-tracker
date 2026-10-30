@@ -4,6 +4,8 @@ var itemId = 0;
 
 window.addEventListener("load", function appLoaded() {
   console.log("App loaded");
+
+  renderHabits();
 });
 
 function addHabit() {
@@ -19,11 +21,28 @@ function addHabit() {
 }
 
 function addReminder() {
-  var reminder = { "itemId": "", "relItemId": "", "weekDays": [], "hour": "" };
+  var reminderHour = document.querySelector("#timeReminder").value;
+
+  var reminder = { "itemId": itemId, "relItemId": "", "weekDays": [], "hour": reminderHour };
+  itemId += 1;
   reminders.push(reminder);
 
   console.log("reminders array: " + JSON.stringify(reminders));
 }
+
+function showContainer(conteinerId) {
+  var container = document.getElementById(conteinerId);
+
+  if (container.style.display === 'none') {
+    container.style.display = 'flex';
+    container.style.animation = 'show 250ms cubic-bezier(0.64, 0.57, 0.67, 1.53)';
+  } else {
+    container.style.animation = 'hide 250ms linear';
+    setTimeout(() => { container.style.display = 'none'; }, 250);
+  }
+}
+
+async function renderHabits() { }
 
 //debug comands
 
@@ -37,10 +56,18 @@ function clearAll() {
 
 //document event listeners
 
-document.querySelector('#add-habit').addEventListener("click", function clickPlus() {
+document.querySelector('#add-habit').addEventListener("click", function () {
   addHabit();
 });
 
-document.querySelector('#clear-all').addEventListener("click", function clear() {
-  clearAll()
+document.querySelector('#clear-all').addEventListener("click", function () {
+  clearAll();
+});
+
+/*document.querySelector('#add-reminder').addEventListener('click', function () {
+  addReminder();
+});*/
+
+document.querySelector('#show-habitreg').addEventListener('click', function () {
+  showContainer('habitreg-container');
 });

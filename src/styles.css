@@ -5,6 +5,26 @@
   --platinum: #ebebebff;
 }
 
+@keyframes show {
+  from {
+    transform: scaleX(0) translateY(100px);
+  }
+
+  to {
+    transform: scaleX(1) translateY(0);
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: scaleX(1) translateY(0);
+  }
+
+  to {
+    transform: scaleX(0) translateY(100px);
+  }
+}
+
 .g-10 {
   gap: 10px;
 }
@@ -98,6 +118,8 @@ input[type="time"] {
 }
 
 #habitreg-container {
+  display: none;
+
   background-color: var(--platinum);
   padding: 20px 0;
   border-radius: 20px;
@@ -122,8 +144,19 @@ input[type="time"] {
   label {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
     width: calc(100% - 40px);
+
+    input[type=text] {
+      padding: 5px 10px;
+    }
+  }
+
+  .submit {
+    width: calc(100% - 40px);
+    padding: 10px;
+    border-radius: 20px;
   }
 
   #remindereg-header {
@@ -133,7 +166,7 @@ input[type="time"] {
     justify-content: space-between;
     width: calc(100% - 40px);
 
-    button {
+    #add-reminder {
       width: 30px;
       height: 30px;
       border-radius: 15px;
@@ -151,8 +184,25 @@ input[type="time"] {
     justify-content: center;
     width: calc(100% - 40px);
     padding: 20px 0;
-    border: 1px solid var(--coffee-bean);
+    background-color: var(--coffee-bean);
     border-radius: 20px;
+
+    p {
+      color: var(--platinum);
+    }
+
+    input[type=time] {
+      background-color: var(--coffee-bean);
+      color: var(--platinum);
+      border: 1px solid var(--platinum);
+      padding: 5px 10px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     fieldset {
       display: flex;
@@ -166,17 +216,18 @@ input[type="time"] {
         justify-content: center;
         border-radius: 20px;
         padding: 5px;
+        color: var(--platinum);
 
-        input{
+        input {
           visibility: hidden;
           width: 0;
           height: 0;
         }
 
-        &:has(input:checked){
-          background-color: var(--midnight-violet);
+        &:has(input:checked) {
+          background-color: var(--platinum);
 
-          color: var(--platinum);
+          color: var(--midnight-violet);
         }
       }
     }
@@ -199,7 +250,7 @@ input[type="time"] {
     font-size: 50px;
   }
 
-  #add-habit {
+  #show-habitreg {
     width: 100px;
     height: 100px;
     border-radius: 50px;
