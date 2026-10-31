@@ -3,6 +3,11 @@
   --midnight-violet: #310e29ff;
   --scarlet-fire: #ff331fff;
   --platinum: #ebebebff;
+
+  --coffee-bean-lo: #17031288;
+  --midnight-violet-lo: #310e2988;
+  --scarlet-fire-lo: #ff331f88;
+  --platinum-lo: #ebebeb88;
 }
 
 @keyframes show {
@@ -37,6 +42,7 @@
   padding: 0;
   margin: 0;
   color: var(--platinum);
+  font-size: 20px;
 }
 
 body {
@@ -67,12 +73,6 @@ h5 {
   font-size: 22px;
 }
 
-p,
-label,
-input {
-  font-size: 20px;
-}
-
 button {
   display: flex;
   align-items: center;
@@ -82,6 +82,8 @@ button {
   fill: var(--platinum);
   border: 0 solid;
   box-shadow: 0px 10px 20px -10px #000, inset 0px 10px 20px -10px var(--platinum);
+  padding: 10px 20px;
+  border-radius: 20px;
 
   transition: all 100ms ease-out;
 
@@ -89,17 +91,23 @@ button {
     filter: brightness(1.5);
     box-shadow: 0px 40px 40px -40px #000, inset 0px 20px 40px -20px var(--platinum);
   }
+
+  &:has(svg) {
+    padding: 0;
+    border-radius: 100px;
+  }
+
+  svg {
+    height: calc(100% - 20px);
+  }
 }
 
-input[type="text"],
-input[type="date"],
-input[type="time"] {
+input[type="text"] {
   background-color: var(--platinum);
   color: var(--coffee-bean);
   border: 1px solid var(--coffee-bean);
   border-radius: 10px;
   width: 100%;
-  font-size: 20px;
 }
 
 #null-button {
@@ -115,6 +123,50 @@ input[type="time"] {
 
 #habit-container {
   margin-top: 20px;
+}
+
+/*Design do item da lista de habitos*/
+.habit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  background-color: var(--midnight-violet-lo);
+  border-radius: 20px;
+
+  transition: all 100ms ease-out;
+
+  h4 {
+    width: calc(100% - 40px);
+  }
+
+  .data-placeholder {
+    width: calc(100% - 40px);
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--coffee-bean-lo);
+  }
+
+  .button-container {
+    width: calc(100% - 40px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      box-shadow: none;
+      border: 1px solid var(--platinum-lo);
+      border-radius: 10px;
+    }
+  }
+
+  &:hover{
+    background-color: var(--midnight-violet);
+  }
 }
 
 #habitreg-container {
@@ -155,8 +207,6 @@ input[type="time"] {
 
   .submit {
     width: calc(100% - 40px);
-    padding: 10px;
-    border-radius: 20px;
   }
 
   #remindereg-header {
@@ -195,7 +245,6 @@ input[type="time"] {
       background-color: var(--coffee-bean);
       color: var(--platinum);
       border: 1px solid var(--platinum);
-      padding: 5px 10px;
     }
 
     label {
@@ -246,22 +295,16 @@ input[type="time"] {
   #null-button {
     width: 75px;
     height: 75px;
-    border-radius: 50px;
-    font-size: 50px;
   }
 
   #show-habitreg {
     width: 100px;
     height: 100px;
-    border-radius: 50px;
-    font-size: 80px;
   }
 
   #clear-all {
     width: 75px;
     height: 75px;
-    border-radius: 50px;
-    font-size: 50px;
   }
 
   .debug-button {

@@ -2,7 +2,7 @@ var habits = [];
 var reminders = [];
 var itemId = 0;
 
-window.addEventListener("load", function appLoaded() {
+window.addEventListener("load", function () {
   console.log("App loaded");
 
   renderHabits();
@@ -17,6 +17,7 @@ function addHabit() {
     habits.push(habit);
 
     console.log("habits array: " + JSON.stringify(habits));
+    renderHabits();
   }
 }
 
@@ -42,7 +43,9 @@ function showContainer(conteinerId) {
   }
 }
 
-async function renderHabits() { }
+async function renderHabits() {
+  console.log('Habits rendered');
+}
 
 //debug comands
 
