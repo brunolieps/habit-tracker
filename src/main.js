@@ -44,6 +44,20 @@ function showContainer(conteinerId) {
 }
 
 async function renderHabits() {
+  var habitContainer = document.getElementById('habit-container');
+  if (habits !== null) {
+    habitContainer.innerHTML = habits.map((habit) => `
+      <div id="${habit.itemId}" class="habit-item g-10">
+        <h4>${habit.name}</h4>
+        <div class="data-placeholder"></div>
+        <div class="button-container">
+          <button>Excluir</button>
+          <button>Editar</button>
+          <button>Concluir</button>
+        </div>
+      </div>
+    `).join('');
+  }
   console.log('Habits rendered');
 }
 
@@ -53,6 +67,7 @@ function clearAll() {
   habits = [];
   reminders = [];
 
+  renderHabits();
   console.log("habits array: " + JSON.stringify(habits));
   console.log("reminders array: " + JSON.stringify(reminders));
 }
