@@ -8,6 +8,8 @@ window.addEventListener("load", function () {
   renderHabits();
 });
 
+//C in CRUD
+
 function addHabit() {
   var habitName = document.querySelector("#habit-name").value;
 
@@ -31,17 +33,7 @@ function addReminder() {
   console.log("reminders array: " + JSON.stringify(reminders));
 }
 
-function showContainer(conteinerId) {
-  var container = document.getElementById(conteinerId);
-
-  if (container.style.display === 'none') {
-    container.style.display = 'flex';
-    container.style.animation = 'show 250ms cubic-bezier(0.64, 0.57, 0.67, 1.53)';
-  } else {
-    container.style.animation = 'hide 250ms linear';
-    setTimeout(() => { container.style.display = 'none'; }, 250);
-  }
-}
+//R in CRUD
 
 async function renderHabits() {
   var habitContainer = document.getElementById('habit-container');
@@ -59,6 +51,20 @@ async function renderHabits() {
     `).join('');
   }
   console.log('Habits rendered');
+}
+
+//Popup
+
+function showContainer(conteinerId) {
+  var container = document.getElementById(conteinerId);
+
+  if (container.style.display === 'none') {
+    container.style.display = 'flex';
+    container.style.animation = 'show 250ms cubic-bezier(0.64, 0.57, 0.67, 1.53)';
+  } else {
+    container.style.animation = 'hide 250ms linear';
+    setTimeout(() => { container.style.display = 'none'; }, 250);
+  }
 }
 
 //debug comands
